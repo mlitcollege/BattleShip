@@ -14,43 +14,39 @@ import javafx.stage.Stage;
 public class GameBoard {
 
 	GridPane gridPane = new GridPane();
-	
+
 	int lengthInPixels = 1000;
 	int lengthInShips = 8;
 	Navy navy;
 	Scene scene = new Scene(gridPane, lengthInPixels, lengthInPixels);
-	
-	
 
 	// Main -> GameBoard
-	
+
 	public GameBoard(int howManyShips) {
 		openStage();
-		
+
 		// making new ships
-		navy = new Navy(howManyShips, lengthInShips); 
-		
+		navy = new Navy(howManyShips, lengthInShips);
+
 		// show ships on GameBoard
 		refreshGameBoard();
-		
+
 		// saves mouse click
-		setClickEvent(); 
+		setClickEvent();
 	}
 
 	// this is the main stage
-	
+
 	public void openStage() {
 		Stage gameBoardStage = new Stage();
 		gameBoardStage.setScene(scene);
 		gameBoardStage.setTitle("B   A   T   T   L   E   S   H   I   P");
 		gameBoardStage.show();
-		
-		
+
 	}
 
-
 	// saves mouseclick/shot
-	
+
 	private void setClickEvent() {
 
 		gridPane.setOnMouseClicked(event -> {
@@ -58,24 +54,24 @@ public class GameBoard {
 			Rectangle square = (Rectangle) event.getTarget();
 			int y = GridPane.getRowIndex(square);
 			int x = GridPane.getColumnIndex(square);
-			
+
 			navy.shot(new int[] { x, y });
-			
+
+			refreshGameBoard();
+
 			if (navy.isGameOver())
 				gameOver();
-			else
-				refreshGameBoard();
 
 		});
 	}
-	
+
 	// takes Navy and displays ships
 	private void refreshGameBoard() {
 		for (int i = 0; i < lengthInShips; i++) {
 			for (int j = 0; j < lengthInShips; j++) {
-				
+
 				// Navy object returns correct color.
-				
+
 				Color colorStatus = navy.getPosColor(i, j);
 				double shipLength = lengthInPixels / lengthInShips;
 				Rectangle square = new Rectangle(shipLength, shipLength, colorStatus);
@@ -84,10 +80,9 @@ public class GameBoard {
 			}
 		}
 	}
-	
-	
+
 	// if game is over
-	
+
 	private void gameOver() {
 
 		Label label = new Label("KÕIK LAEVAD PÕHJAS!");
