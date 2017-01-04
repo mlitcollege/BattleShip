@@ -16,7 +16,7 @@ public class BattleShip {
         for (int i = 0; i < location.length; i++) {
             if (location[i][0] == shot[0] && location[i][1] == shot[1]) {
                 location[i][2] = 1;       
-                System.out.println("Said laevale pihta!");    
+                System.out.println("SAID LAEVALE PIHTA!");
                 return true;                 
             }
         }
@@ -32,7 +32,7 @@ public class BattleShip {
         return -1; // no coordinate
     }
     
-    // This method is from source 1, line 10 to 50: https://github.com/KristerV/javaLaevadePommitamine/blob/master/src/Laev.java
+    // This method generates new Battleship
     
     public BattleShip(int kohaline, int maxPos) {
     	location = new int[kohaline][3];
