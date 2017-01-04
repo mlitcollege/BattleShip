@@ -16,7 +16,7 @@ public class GameBoard {
 	GridPane gridPane = new GridPane();
 
 	int lengthInPixels = 1000;
-	int lengthInShips = 8;
+	int lengthInShips = 9;
 	Navy navy;
 	Scene scene = new Scene(gridPane, lengthInPixels, lengthInPixels);
 

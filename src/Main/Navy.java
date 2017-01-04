@@ -52,11 +52,11 @@ public class Navy {
 			BattleShip ship = ships.get(k);
 			int status = ship.getPosStatus(new int[] { i, j });
 			if (status == 0)
-				return Color.DARKSLATEGREY;
+				return Color.BLACK;
 			else if (status == 1) // ship got hit
 				return Color.DARKORANGE;
 		}
-		return Color.DEEPSKYBLUE;
+		return Color.DARKBLUE;
 	}
 	// checks the condidion of all the ships
 	public boolean isGameOver() {

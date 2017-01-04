@@ -15,7 +15,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-		int howManyShips = 60;
+		int howManyShips = 10;
 		new GameBoard(howManyShips);
 
 	}
