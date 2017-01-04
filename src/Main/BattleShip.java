@@ -10,7 +10,7 @@ public class BattleShip {
 
 	}
 
-	// This method checks if ship got hit (code source 1)
+	// This method checks if ship got hit (code source1)
 
 	public boolean shipGotHit(int[] shot) {
 		for (int i = 0; i < location.length; i++) {
@@ -23,7 +23,7 @@ public class BattleShip {
 		return false;
 	}
 
-	// This method returns coordinate if the ship has it. (code source 1)
+	// This method returns coordinate if the ship has it. (code source1)
 	public int getPosStatus(int[] xy) {
 		for (int i = 0; i < location.length; i++) {
 			if (location[i][0] == xy[0] && location[i][1] == xy[1])
@@ -32,7 +32,7 @@ public class BattleShip {
 		return -1; // no coordinate
 	}
 
-	// This method generates new Battleship
+	// This method generates new Battleship. (code source1)
 
 	public BattleShip(int kohaline, int maxPos) {
 		location = new int[kohaline][3];
@@ -46,7 +46,7 @@ public class BattleShip {
 		}
 	}
 
-	// This method checks if a ship is on another ship (code source 1)
+	// This method checks if a ship is on another ship (code source1)
 
 	public boolean isNearby(BattleShip teine) {
 		int[][] koord2 = teine.getCoordinates();
