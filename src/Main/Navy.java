@@ -10,9 +10,7 @@ public class Navy {
 	public Navy(int howMany, int maxPos) {
         int maxCycles = howMany * 10;
         int counting = 0;
-//        Image shipPic = new Image("battleship.png");
-//        ImagePattern shipPattern = new ImagePattern(shipPic);
-       
+        
         // Generating as many ships as wanted
         for (int i = 0; i < howMany; i++) {
         	
@@ -20,7 +18,7 @@ public class Navy {
             int shipLength = Math.max(5 - i, 1);    
             BattleShip ship = new BattleShip(shipLength, maxPos);
             
-            // is it alone or on other ship?
+            // is it alone or on other ship? source1
             boolean alone = true;
             for (int j = 0; j < ships.size(); j++) {
                 alone = alone && !ship.isNearby(ships.get(j));
@@ -43,21 +41,22 @@ public class Navy {
             if (shipGotHit)                           
                 return;                           
         }
+        System.out.println("LASID MERRE!");
     }
     
     
     // returns the correct color
     public Color getPosColor(int i, int j) {
-    	// ask every ship to find out who is in that square
+    	// ask every ship to find out who is in that square. code source1
         for (int k = 0; k < ships.size(); k++) {
             BattleShip ship = ships.get(k);                   
             int status = ship.getPosStatus(new int[]{i, j}); 
             if (status == 0)                               
-                return Color.BLACK;
-            else if (status == 1)     
-                return Color.RED;
+                return Color.DARKSLATEGREY;
+            else if (status == 1)  // ship got hit   
+                return Color.DARKORANGE;
         }
-        return Color.DARKBLUE;                               
+        return Color.DEEPSKYBLUE;                               
     }
 
     public boolean isGameOver() {

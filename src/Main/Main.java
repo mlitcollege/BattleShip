@@ -10,9 +10,12 @@ public class Main extends Application {
 
 	}
 
+	// start method makes new object from class GameBoard
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		int howManyShips = 10;
+		
+		int howManyShips = 60;
 		new GameBoard(howManyShips);
 		
 	}
