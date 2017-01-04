@@ -14,18 +14,18 @@ import javafx.stage.Stage;
 public class GameBoard {
 
 	GridPane gridPane = new GridPane();
-	int lengthInPixels = 900;
-	int lengthInShips = 7;
+	
+	int lengthInPixels = 1000;
+	int lengthInShips = 8;
 	Navy navy;
 	Scene scene = new Scene(gridPane, lengthInPixels, lengthInPixels);
+	
+	
 
 	// Main -> GameBoard
 	
 	public GameBoard(int howManyShips) {
-		
-		Stage gameBoardStage = new Stage();
-		gameBoardStage.setScene(scene);
-		gameBoardStage.show();
+		openStage();
 		
 		// making new ships
 		navy = new Navy(howManyShips, lengthInShips); 
@@ -35,6 +35,17 @@ public class GameBoard {
 		
 		// saves mouse click
 		setClickEvent(); 
+	}
+
+	// this is the main stage
+	
+	public void openStage() {
+		Stage gameBoardStage = new Stage();
+		gameBoardStage.setScene(scene);
+		gameBoardStage.setTitle("B   A   T   T   L   E   S   H   I   P");
+		gameBoardStage.show();
+		
+		
 	}
 
 
@@ -57,7 +68,8 @@ public class GameBoard {
 
 		});
 	}
-
+	
+	// takes Navy and displays ships
 	private void refreshGameBoard() {
 		for (int i = 0; i < lengthInShips; i++) {
 			for (int j = 0; j < lengthInShips; j++) {
@@ -82,14 +94,12 @@ public class GameBoard {
 		label.setFont(new Font("Serif", 50));
 		VBox gameOverBox = new VBox();
 		Button exitButton = new Button("Välju Mängust");
-		Button startButton = new Button("Mängi uuesti");
+		// Button startButton = new Button("Mängi uuesti");
 		exitButton.setMaxSize(150, 50);
-		startButton.setMaxSize(150, 50);
+		// startButton.setMaxSize(150, 50);
 		exitButton.setOnAction(e -> Platform.exit());
-		startButton.setOnAction(e -> {
-			System.out.println("mäng algas");
-		});
-		gameOverBox.getChildren().addAll(label, exitButton, startButton);
+		// startButton.setOnAction(e -> );
+		gameOverBox.getChildren().addAll(label, exitButton);
 		scene.setRoot(gameOverBox);
 
 	}
