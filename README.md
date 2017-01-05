@@ -3,7 +3,8 @@
 ### Projekti kirjeldus ja kasutusjuhend
 
 - See projekt sisaldab endas lihtsustatud viisil laevadepommitamise mängu. 
-- Mäng on üles ehitatud 9x9 ruudukestest koosnevale mängulauale, kuhu on paigutatud 10 erinevate pikkustega sõjalaeva. 
+- Mäng on üles ehitatud 9x9 ruudukestest koosnevale mängulauale. 
+- Mängus on 10 erinevate pikkustega sõjalaeva
 - Kõik sinised ruudud tähistavad merd.
 - Tulistamiseks tuleb vajutada hiirega ruudule.
 - Pihta saanud sõjalaeva ruut muutub oranziks.
