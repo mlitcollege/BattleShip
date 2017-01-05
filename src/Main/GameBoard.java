@@ -81,19 +81,14 @@ public class GameBoard {
 		}
 	}
 
-	// if game is over
-
 	private void gameOver() {
 
 		Label label = new Label("KÕIK LAEVAD PÕHJAS!");
 		label.setFont(new Font("Serif", 50));
 		VBox gameOverBox = new VBox();
 		Button exitButton = new Button("Välju Mängust");
-		// Button startButton = new Button("Mängi uuesti");
 		exitButton.setMaxSize(150, 50);
-		// startButton.setMaxSize(150, 50);
 		exitButton.setOnAction(e -> Platform.exit());
-		// startButton.setOnAction(e -> );
 		gameOverBox.getChildren().addAll(label, exitButton);
 		scene.setRoot(gameOverBox);
 
