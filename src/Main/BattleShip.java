@@ -3,7 +3,6 @@ package Main;
 public class BattleShip {
 	int[][] location;
 
-	// This method returns ship coordinates (location).
 	public int[][] getCoordinates() {
 
 		return location;
@@ -46,7 +45,7 @@ public class BattleShip {
 		}
 	}
 
-	// This method checks if a ship is on another ship (code source1)
+	// This method checks if a ship is next to another ship (code source1)
 
 	public boolean isNearby(BattleShip teine) {
 		int[][] koord2 = teine.getCoordinates();
