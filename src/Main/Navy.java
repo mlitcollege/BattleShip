@@ -46,7 +46,7 @@ public class Navy {
 	}
 
 	// returns the correct color
-	public Color getPosColor(int i, int j) {
+	public Color getColorPosition(int i, int j) {
 		// ask every ship to find out who is in that square. code source1
 		for (int k = 0; k < ships.size(); k++) {
 			BattleShip ship = ships.get(k);

@@ -72,7 +72,7 @@ public class GameBoard {
 
 				// Navy object returns correct color.
 
-				Color colorStatus = navy.getPosColor(i, j);
+				Color colorStatus = navy.getColorPosition(i, j);
 				double shipLength = lengthInPixels / lengthInShips;
 				Rectangle square = new Rectangle(shipLength, shipLength, colorStatus);
 				square.setStroke(Color.CADETBLUE);
